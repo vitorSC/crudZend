@@ -1,0 +1,53 @@
+<?php if (count($messages)):?>
+	<?php foreach ($messages as $value):
+		$key = key($value);
+		$message = current($value);
+	?>
+	<div class="alert alert-<?php echo $key?>">
+	  <button type="button" class="close" data-dismiss="alert">&times;</button>
+	  <?php echo $message?>
+	</div>
+	<?php endforeach;?>
+<?php endif;?>
+
+<h1><?php echo $titulo?></h1>
+
+<div class="well">
+    <table class="table">
+    	<thead>
+    	    <tr>
+    	    	<td>ID</td>
+    	    	<td>Foto</td>
+    	    	<td>Nome</td>
+    	    	<td>Opções</td>
+    	    </tr>
+    	</thead> 
+    	<tbody>
+    		<?php    		
+    		if (count($produtos)):?>
+	    		<?php foreach ($produtos as $produto):?>	    	
+	    		<tr>
+	    			<td><?php echo $produto->produto_id?></td>
+	    			<td>
+	    			<?php if (!empty($produto->produto_foto)) :?>
+	    				<img src="<?php echo "/projetos/crud_prod/public/conteudos/produtos/".$produto->produto_foto?>" width="100" />
+	    			<?php else :?>
+	    				<img src="/projetos/crud_prod/public/img/sem-imagem.jpg" width="100" />
+	    			<?php endif;?>
+	    			</td>
+	    			<td><?php echo $produto->produto_nome?></td>
+	    			<td>
+	    			    <a href="produtos/editar/<?php echo $produto->produto_id?>"><i class="icon-pencil"></i></a>
+	    			    <a href="produtos/excluir/<?php echo $produto->produto_id?>"><i class="icon-remove"></i></a>
+	    			</td>
+	    		</tr>
+	    		<?php endforeach;
+    		else:
+    		?>
+    			<tr>
+    				<td colspan="4">Nenhum Produto Cadastrado!</td>
+    			</tr>
+    		<?php endif;?>
+    	</tbody>   	
+    </table>
+</div>

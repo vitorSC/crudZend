@@ -1,0 +1,89 @@
+<?php $form->prepare();?>
+<?php echo $this->form()->openTag($form); ?>
+<?php echo $this->formElement($form->get('produto_id'))?>
+
+    <table>
+    	<thead>
+    		<tr>
+    			<td><?php echo $this->formLabel($form->get('produto_nome'))?></td>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td><?php echo $this->formElement($form->get('produto_nome'))?></td>
+    		</tr>
+    	</tbody>
+    	<tbody>
+    		<tr>
+    			<td><?php echo $this->formElementErrors($form->get('produto_nome'))?></td>
+    		</tr>
+    	</tbody>
+    	<thead>
+    		<tr>
+    			<td><?php echo $this->formLabel($form->get('produto_preco'))?></td>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td><?php echo $this->formElement($form->get('produto_preco'))?></td>
+    		</tr>
+    	</tbody>
+    	<tbody>
+    		<tr>
+    			<td><?php echo $this->formElementErrors($form->get('produto_preco'))?></td>
+    		</tr>
+    	</tbody>
+    	<thead>
+    		<tr>
+    			<td><?php echo $this->formLabel($form->get('produto_foto'))?></td>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td><?php echo $this->formElement($form->get('produto_foto'))?></td>
+    		</tr>
+    	</tbody>    
+    		
+    	<tbody>
+    		<tr>
+    			<td><?php echo $this->formElementErrors($form->get('produto_foto'))?></td>
+    		</tr>
+    	</tbody>
+   
+    	<thead>
+    		<tr>
+    			<td><?php echo $this->formLabel($form->get('produto_descricao'))?></td>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td><?php echo $this->formElement($form->get('produto_descricao'))?></td>
+    		</tr>
+    	</tbody>
+    	<tbody>
+    		<tr>
+    			<td><?php echo $this->formElementErrors($form->get('produto_descricao'))?></td>
+    		</tr>
+    	</tbody>
+    	<thead>
+    		<tr>
+    			<td><?php echo $this->formLabel($form->get('produto_status'))?></td>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td><?php echo $this->formElement($form->get('produto_status'))?></td>
+    		</tr>
+    	</tbody>
+    	<tbody>
+    		<tr>
+    			<td><?php echo $this->formElementErrors($form->get('produto_status'))?></td>
+    		</tr>
+    	</tbody>
+    	<tbody>
+    		<tr>
+    			<td><?php echo $this->formElement($form->get('produto_submit'))?></td>
+    		</tr>
+    	</tbody>
+    </table>
+<?php echo $this->form()->closeTag($form); ?>
