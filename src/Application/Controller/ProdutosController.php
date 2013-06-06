@@ -6,7 +6,6 @@ use Zend\File\Transfer\Adapter\Http;
 
 use Zend\Validator\File\Size;
 
-
 use Zend\ProgressBar\ProgressBar;
 use Zend\Loader\StandardAutoloader;
 use Zend\Validator\AbstractValidator;
