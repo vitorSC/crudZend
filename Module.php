@@ -10,7 +10,6 @@
 namespace Application;
 
 use Application\Model\ProdutoTable;
-
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
