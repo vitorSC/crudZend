@@ -78,10 +78,11 @@ class ProdutoTable extends AbstractTableGateway
 	public function removeProduto($idProduto) {
 		$idProduto = (int)$idProduto;
 		
-		if ($this->getProduto($idProduto)) {
+		try {
 			$this->delete(array('produto_id' => $idProduto));			
-		} else {
-			throw new \Exception("O produto '$idProduto' não foi encontrado no banco de dados");
-		}
+			return true;
+		} catch(Exception $e) {
+			die("O produto '$idProduto' não foi encontrado no banco de dados");
+		}				
 	}
 }
