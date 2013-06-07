@@ -171,6 +171,7 @@ class ProdutosController extends AbstractActionController
 			if ($del == 'Sim') {				
 				$id = (int) $request->getPost('id');
 				if ($this->getProdutoTable()->removeProduto($id)) {
+					$this->flashMessenger()->addMessage(array('success' => 'Produto excluído com sucesso!'));
 					$this->redirect()->toUrl('http://localhost/projetos/crud_prod/public/produtos');
 				}
 			} else {
