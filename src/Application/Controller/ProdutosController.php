@@ -6,7 +6,6 @@ use Zend\File\Transfer\Adapter\Http;
 
 use Zend\Validator\File\Size;
 
-use Zend\ProgressBar\ProgressBar;
 use Zend\Loader\StandardAutoloader;
 use Zend\Validator\AbstractValidator;
 use Zend\Mvc\Controller\AbstractActionController;
@@ -160,5 +159,28 @@ class ProdutosController extends AbstractActionController
 		$view->setTemplate('application/produtos/form.phtml');
 		
 		return $view;
+	}
+	
+	public function excluirAction() {
+		$id = $this->params('id');						
+		
+		$request = $this->getRequest();
+		if ($request->isPost()) {
+			$del = $request->getPost('del');
+			
+			if ($del == 'Sim') {				
+				$id = (int) $request->getPost('id');
+				if ($this->getProdutoTable()->removeProduto($id)) {
+					$this->redirect()->toUrl('http://localhost/projetos/crud_prod/public/produtos');
+				}
+			} else {
+				$this->redirect()->toUrl('http://localhost/projetos/crud_prod/public/produtos');
+			}					
+		}
+		
+		return array(
+			'id'    => $id,
+			'produto' => $this->getProdutoTable()->getProduto($id)
+		);
 	}
 }
