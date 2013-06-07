@@ -15,11 +15,14 @@
 <div class="well">
     <table class="table">
     	<thead>
+    		<tr>
+    			<td colspan="4" style="text-align: right;height: 60px;"><a class="btn btn-primary" href="http://localhost/projetos/crud_prod/public/produtos/novo">Novo Produto</a></td>
+    		</tr>
     	    <tr>
     	    	<td>ID</td>
     	    	<td>Foto</td>
     	    	<td>Nome</td>
-    	    	<td>Opções</td>
+    	    	<td style="text-align:right">Opções</td>    	    	
     	    </tr>
     	</thead> 
     	<tbody>
@@ -36,7 +39,7 @@
 	    			<?php endif;?>
 	    			</td>
 	    			<td><?php echo $produto->produto_nome?></td>
-	    			<td>
+	    			<td style="text-align:right">
 	    			    <a href="produtos/editar/<?php echo $produto->produto_id?>"><i class="icon-pencil"></i></a>
 	    			    <a href="produtos/excluir/<?php echo $produto->produto_id?>"><i class="icon-remove"></i></a>
 	    			</td>
